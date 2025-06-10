@@ -13,4 +13,6 @@ public interface IClinicaRepository
     Task UpdateAsync(Clinica clinica);
     Task DeleteAsync(Clinica clinica);
     Task<bool> SaveChangesAsync();
+    Task<IEnumerable<Clinica>> GetClinicasWithMedicosAsync();
+    Task<IEnumerable<Clinica>> GetClinicasByUFAsync(string uf);
 }

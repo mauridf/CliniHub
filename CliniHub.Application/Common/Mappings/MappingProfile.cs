@@ -89,6 +89,8 @@ public class MappingProfile : Profile
         CreateMap<ClinicaCreateDto, Clinica>();
         CreateMap<ClinicaUpdateDto, Clinica>();
         CreateMap<Clinica, ClinicaSummaryDto>();
+        CreateMap<Clinica, ClinicaMedicosResponseDto>()
+            .ForMember(dest => dest.Medicos, opt => opt.MapFrom(src => src.Medicos));
 
         // Mapeamentos de Medico
         CreateMap<Medico, MedicoResponseDto>()

@@ -101,5 +101,24 @@ namespace CliniHub.Api.Controllers
             if (!result) return NotFound();
             return NoContent();
         }
+
+        [HttpGet("com-medicos")]
+        public async Task<ActionResult<IEnumerable<ClinicaMedicosResponseDto>>> GetClinicasWithMedicos()
+        {
+            var clinicas = await _clinicaService.GetClinicasWithMedicosAsync();
+            return Ok(clinicas);
+        }
+
+        [HttpGet("por-uf/{uf}")]
+        public async Task<ActionResult<IEnumerable<ClinicaSummaryDto>>> GetClinicasByUF(string uf)
+        {
+            if (string.IsNullOrWhiteSpace(uf) || uf.Length != 2)
+            {
+                return BadRequest("UF deve conter 2 caracteres");
+            }
+
+            var clinicas = await _clinicaService.GetClinicasByUFAsync(uf);
+            return Ok(clinicas);
+        }
     }
 }

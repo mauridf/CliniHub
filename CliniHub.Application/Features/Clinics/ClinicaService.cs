@@ -83,4 +83,16 @@ public class ClinicaService : IClinicaService
 
         return true;
     }
+
+    public async Task<IEnumerable<ClinicaMedicosResponseDto>> GetClinicasWithMedicosAsync()
+    {
+        var clinicas = await _clinicaRepository.GetClinicasWithMedicosAsync();
+        return _mapper.Map<IEnumerable<ClinicaMedicosResponseDto>>(clinicas);
+    }
+
+    public async Task<IEnumerable<ClinicaSummaryDto>> GetClinicasByUFAsync(string uf)
+    {
+        var clinicas = await _clinicaRepository.GetClinicasByUFAsync(uf);
+        return _mapper.Map<IEnumerable<ClinicaSummaryDto>>(clinicas);
+    }
 }

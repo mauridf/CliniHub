@@ -10,4 +10,6 @@ public interface IClinicaService
     Task<ClinicaResponseDto> UpdateAsync(Guid id, ClinicaUpdateDto clinicaDto);
     Task<bool> DeleteAsync(Guid id);
     Task<bool> UpdateLogoAsync(Guid id, string logoPath);
+    Task<IEnumerable<ClinicaMedicosResponseDto>> GetClinicasWithMedicosAsync();
+    Task<IEnumerable<ClinicaSummaryDto>> GetClinicasByUFAsync(string uf);
 }

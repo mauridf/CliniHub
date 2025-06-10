@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using CliniHub.Application.Dtos.Doctors;
 
 namespace CliniHub.Application.Dtos.Clinics;
 
@@ -47,4 +48,12 @@ public class ClinicaSummaryDto
     public string Nome { get; set; }
     public string UF { get; set; }
     public string Telefone { get; set; }
+}
+
+public class ClinicaMedicosResponseDto
+{
+    public Guid Id { get; set; }
+    public string Nome { get; set; }
+    public string UF { get; set; }
+    public IEnumerable<MedicoSummaryDto> Medicos { get; set; }
 }

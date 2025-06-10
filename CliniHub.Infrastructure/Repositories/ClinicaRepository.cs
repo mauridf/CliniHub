@@ -47,5 +47,25 @@ namespace CliniHub.Infrastructure.Repositories
         {
             return await _context.SaveChangesAsync() > 0;
         }
+
+        public async Task<IEnumerable<Clinica>> GetClinicasWithMedicosAsync()
+        {
+            return await _context.Clinicas
+                .Include(c => c.Medicos)
+                    .ThenInclude(m => m.Usuario)
+                .Include(c => c.Medicos)
+                    .ThenInclude(m => m.EspecialidadeMedica)
+                .Where(c => c.Medicos.Any())
+                .AsNoTracking()
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Clinica>> GetClinicasByUFAsync(string uf)
+        {
+            return await _context.Clinicas
+                .Where(c => c.UF == uf.ToUpper())
+                .AsNoTracking()
+                .ToListAsync();
+        }
     }
 }

@@ -19,6 +19,14 @@ public class LaudoResponseDto
     public PacienteSummaryDto Paciente { get; set; }
     public MedicoSummaryDto Medico { get; set; }
     public DateTime CriadoEm { get; set; }
+
+    // Propriedades de navegação como objetos
+    public PacienteSummaryDto Pacientes { get; set; }
+    public MedicoSummaryDto Medicos { get; set; }
+
+    // Propriedades adicionais para nomes diretos (opcional)
+    public string MedicoNome => Medico?.Nome;
+    public string PacienteNome => Paciente?.Nome;
 }
 
 public class LaudoPdfDto

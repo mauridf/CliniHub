@@ -43,6 +43,12 @@ public class AgendamentoConfiguration : IEntityTypeConfiguration<Agendamento>
             .HasForeignKey(a => a.MedicoId)
             .OnDelete(DeleteBehavior.Restrict);
 
+        // Relacionamento com Consulta (1:1)
+        builder.HasOne(a => a.Consulta)
+            .WithOne(c => c.Agendamento)
+            .HasForeignKey<Consulta>(c => c.AgendamentoId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         // Índice composto para evitar agendamentos duplicados
         builder.HasIndex(a => new { a.MedicoId, a.DataHora })
             .IsUnique();

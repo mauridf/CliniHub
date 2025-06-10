@@ -32,6 +32,11 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterDto request)
     {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
         var user = new Usuario
         {
             Nome = request.Nome,
@@ -39,7 +44,10 @@ public class AuthController : ControllerBase
             UserName = request.Email,
             CPF = request.CPF,
             Genero = request.Genero,
-            CriadoPor = Guid.Empty, // Será definido no serviço
+            EnderecoCompleto = request.EnderecoCompleto,
+            UF = request.UF,
+            CEP = request.CEP,
+            CriadoPor = Guid.Empty, // Ou o ID do usuário admin se disponível
             CriadoEm = DateTime.UtcNow
         };
 

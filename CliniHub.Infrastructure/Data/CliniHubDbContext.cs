@@ -21,6 +21,13 @@ public class CliniHubDbContext : IdentityDbContext<Usuario, Role, Guid>
     public DbSet<Laudo> Laudos { get; set; }
     public DbSet<DisponibilidadeMedico> DisponibilidadesMedicos { get; set; }
     public DbSet<BloqueioAgendaMedico> BloqueiosAgendaMedicos { get; set; }
+    public DbSet<Consulta> Consultas { get; set; }
+    public DbSet<TipoExame> TiposExames { get; set; }
+    public DbSet<PedidoExame> PedidosExames { get; set; }
+    public DbSet<Receita> Receitas { get; set; }
+    public DbSet<ItemReceita> ItensReceitas { get; set; }
+    public DbSet<Medicamento> Medicamentos { get; set; }
+    public DbSet<Atestado> Atestados { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -36,7 +43,14 @@ public class CliniHubDbContext : IdentityDbContext<Usuario, Role, Guid>
         modelBuilder.ApplyConfiguration(new AgendamentoConfiguration());
         modelBuilder.ApplyConfiguration(new LaudoConfiguration());
         modelBuilder.ApplyConfiguration(new DisponibilidadeMedicoConfiguration());
-        modelBuilder.ApplyConfiguration(new BloqueioAgendaMedicoConfiguration());
+        modelBuilder.ApplyConfiguration(new ConsultaConfiguration());
+        modelBuilder.ApplyConfiguration(new TipoExameConfiguration());
+        modelBuilder.ApplyConfiguration(new PedidoExameConfiguration());
+        modelBuilder.ApplyConfiguration(new ReceitaConfiguration());
+        modelBuilder.ApplyConfiguration(new ItemReceitaConfiguration());
+        modelBuilder.ApplyConfiguration(new MedicamentoConfiguration());
+        modelBuilder.ApplyConfiguration(new AtestadoConfiguration());
+
 
         // Configurar enums como strings
         modelBuilder.Entity<Usuario>()

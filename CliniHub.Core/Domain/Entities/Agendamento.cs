@@ -21,4 +21,5 @@ public class Agendamento
     public Clinica Clinica { get; set; }
     public Medico Medico { get; set; }
     public Laudo Laudo { get; set; }
+    public Consulta Consulta { get; set; }
 }

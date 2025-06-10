@@ -100,6 +100,7 @@ public class AuthService : IAuthService
             {
                 Name = roleName,
                 Nome = role,
+                Descricao = $"Role para {roleName}", // Adicione uma descrição padrão
                 CriadoPor = usuario.Id,
                 CriadoEm = DateTime.UtcNow
             });

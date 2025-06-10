@@ -1,4 +1,6 @@
-﻿namespace CliniHub.Application.Dtos.Clinics;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CliniHub.Application.Dtos.Clinics;
 
 public class ClinicaCreateDto
 {
@@ -10,6 +12,8 @@ public class ClinicaCreateDto
     public string Telefone { get; set; }
     public string Email { get; set; }
     public string Website { get; set; }
+    [Required]
+    public string Logotipo { get; set; } = "default-logo.png";
 }
 
 public class ClinicaUpdateDto
@@ -34,7 +38,7 @@ public class ClinicaResponseDto
     public string Telefone { get; set; }
     public string Email { get; set; }
     public string Website { get; set; }
-    public string Logotipo { get; set; }
+    public string? Logotipo { get; set; }
 }
 
 public class ClinicaSummaryDto

@@ -18,13 +18,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CliniHub.Core\CliniHub.Core.csproj" />
+    <ProjectReference Include="..\CliniHub.Infrastructure\CliniHub.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Common\Behaviors\" />
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Interfaces\" />
-    <Folder Include="Features\Clinics\" />
     <Folder Include="Features\Doctors\" />
     <Folder Include="Features\Appointments\" />
     <Folder Include="Features\Attendants\" />

@@ -11,7 +11,7 @@ public class Clinica
     public string Telefone { get; set; }
     public string Email { get; set; }
     public string Website { get; set; }
-    public string Logotipo { get; set; }
+    public string? Logotipo { get; set; }
     public Guid CriadoPor { get; set; }
     public DateTime CriadoEm { get; set; }
     public Guid? AlteradoPor { get; set; }

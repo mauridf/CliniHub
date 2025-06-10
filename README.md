@@ -1,6 +1,7 @@
 # CliniHub - Sistema de Gestão de Clínicas Médicas
 
-![CliniHub](https://via.placeholder.com/150x50?text=CliniHub)
+![image](https://github.com/user-attachments/assets/7a940c2f-84f6-4d4b-a8d4-80843cff2c36)
+
 
 ## 📌 Visão Geral
 O CliniHub é um sistema completo para gestão de clínicas médicas, oferecendo:

@@ -28,6 +28,7 @@ public class MedicoSummaryDto
 public class MedicoResponseDto
 {
     public Guid Id { get; set; }
+    public Guid ClinicaId { get; set; }
     public string CRM { get; set; }
     public bool Ativo { get; set; }
 

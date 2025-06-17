@@ -25,7 +25,6 @@
     <Folder Include="Common\Behaviors\" />
     <Folder Include="Common\Exceptions\" />
     <Folder Include="Common\Interfaces\" />
-    <Folder Include="Features\Doctors\" />
     <Folder Include="Features\Appointments\" />
     <Folder Include="Features\Patients\" />
     <Folder Include="Services\" />

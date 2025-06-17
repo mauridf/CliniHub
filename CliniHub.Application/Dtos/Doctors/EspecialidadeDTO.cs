@@ -12,3 +12,9 @@ public class EspecialidadeResponseDto
     public string Nome { get; set; }
     public string Observacao { get; set; }
 }
+
+public class EspecialidadeUpdateDto
+{
+    public string Nome { get; set; }
+    public string Observacao { get; set; }
+}

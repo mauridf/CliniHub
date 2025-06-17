@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using CliniHub.Application.Features.Attendants;
 using CliniHub.Application.Features.Authentication;
 using CliniHub.Application.Features.Clinics;
 using CliniHub.Application.Features.Users;
@@ -17,9 +18,11 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IAuthService, AuthService>();
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<IClinicaService, ClinicaService>();
+        services.AddScoped<IAtendenteService, AtendenteService>();
 
         // Registrar Repository
         services.AddScoped<IClinicaRepository, ClinicaRepository>();
+        services.AddScoped<IAtendenteRepository, AtendenteRepository>();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

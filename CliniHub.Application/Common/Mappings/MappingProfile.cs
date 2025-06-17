@@ -10,6 +10,7 @@ using CliniHub.Application.Dtos.Medicamentos;
 using CliniHub.Application.Dtos.Clinics;
 using CliniHub.Application.Dtos.Doctors;
 using CliniHub.Application.Dtos.Patients;
+using CliniHub.Application.Dtos.Attendants;
 
 namespace CliniHub.Application.Common.Mappings;
 
@@ -22,6 +23,10 @@ public class MappingProfile : Profile
         CreateMap<UsuarioCreateDto, Usuario>()
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Email));
         CreateMap<UsuarioUpdateDto, Usuario>();
+
+        //Mapeamentos de Atendente
+        CreateMap<AtendenteCreateDto, Atendente>();
+        CreateMap<Atendente, AtendenteResponseDto>();
 
         // Mapeamentos de Agendamento
         CreateMap<Agendamento, AgendamentoResponseDto>();

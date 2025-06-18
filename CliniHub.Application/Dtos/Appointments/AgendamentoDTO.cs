@@ -38,6 +38,8 @@ public class AgendamentoCalendarDto
 public class AgendamentoResponseDto
 {
     public Guid Id { get; set; }
+    public Guid PacienteId { get; set; }
+    public Guid ClinicaId { get; set; }
     public DateTime DataHora { get; set; }
     public TipoAgendamento Tipo { get; set; }
     public StatusAgendamento Status { get; set; }

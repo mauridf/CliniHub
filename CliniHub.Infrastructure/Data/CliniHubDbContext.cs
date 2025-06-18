@@ -29,6 +29,16 @@ public class CliniHubDbContext : IdentityDbContext<Usuario, Role, Guid>
     public DbSet<Medicamento> Medicamentos { get; set; }
     public DbSet<Atestado> Atestados { get; set; }
 
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    optionsBuilder.UseNpgsql("DefaultConnection", opt =>
+    //    {
+    //        opt.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+    //    });
+
+    //    AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", false);
+    //}
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

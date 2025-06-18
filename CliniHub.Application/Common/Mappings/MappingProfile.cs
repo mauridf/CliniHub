@@ -37,7 +37,9 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.Title, opt => opt.MapFrom(src => $"{src.Paciente.Nome} - {src.Medico.Usuario.Nome}"));
 
         // Mapeamentos de Consulta
-        CreateMap<Consulta, ConsultaResponseDto>();
+        CreateMap<Consulta, ConsultaResponseDto>()
+            .ForMember(dest => dest.Agendamento, opt => opt.MapFrom(src => src.Agendamento));
+        CreateMap<Agendamento, AgendamentoSummaryDto>();
         CreateMap<ConsultaCreateDto, Consulta>();
         CreateMap<ConsultaUpdateDto, Consulta>();
 

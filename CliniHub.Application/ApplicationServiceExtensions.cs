@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
+using CliniHub.Application.Features.Appointments;
 using CliniHub.Application.Features.Attendants;
 using CliniHub.Application.Features.Authentication;
 using CliniHub.Application.Features.Clinics;
+using CliniHub.Application.Features.Consultation;
 using CliniHub.Application.Features.Doctors;
 using CliniHub.Application.Features.Patients;
 using CliniHub.Application.Features.Users;
@@ -24,6 +26,8 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IMedicoService, MedicoService>();
         services.AddScoped<IEspecialidadeMedicaService, EspecialidadeMedicaService>();
         services.AddScoped<IPacienteService, PacienteService>();
+        services.AddScoped<IAgendamentoService, AgendamentoService>();
+        services.AddScoped<IConsultaService, ConsultaService>();
 
         // Registrar Repository
         services.AddScoped<IClinicaRepository, ClinicaRepository>();
@@ -31,6 +35,8 @@ public static class ApplicationServiceExtensions
         services.AddScoped<IMedicoRepository, MedicoRepository>();
         services.AddScoped<IEspecialidadeMedicaRepository, EspecialidadeMedicaRepository>();
         services.AddScoped<IPacienteRepository, PacienteRepository>();
+        services.AddScoped<IAgendamentoRepository, AgendamentoRepository>();
+        services.AddScoped<IConsultaRepository, ConsultaRepository>();
 
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 

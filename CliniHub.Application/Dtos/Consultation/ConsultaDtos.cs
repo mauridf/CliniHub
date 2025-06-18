@@ -32,7 +32,17 @@ public class ConsultaResponseDto
     public string Conduta { get; set; }
     public DateTime CriadoEm { get; set; }
     public Guid AgendamentoId { get; set; }
+    public AgendamentoSummaryDto Agendamento { get; set; }
     public IEnumerable<PedidoExameResponseDto> PedidosExames { get; set; }
     public IEnumerable<ReceitaResponseDto> Receitas { get; set; }
     public IEnumerable<AtestadoResponseDto> Atestados { get; set; }
+}
+
+public class AgendamentoSummaryDto
+{
+    public Guid Id { get; set; }
+    public DateTime DataHora { get; set; }
+    public Guid ClinicaId { get; set; }
+    public Guid MedicoId { get; set; }
+    public Guid PacienteId { get; set; }
 }

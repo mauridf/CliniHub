@@ -25,6 +25,15 @@ public class AgendamentoConfiguration : IEntityTypeConfiguration<Agendamento>
         builder.Property(a => a.AlteradoEm)
             .IsRequired(false);
 
+        builder.Property(a => a.DataHora)
+            .IsRequired()
+            .HasColumnType("timestamp with time zone")
+            .HasConversion(
+                v => v.Kind == DateTimeKind.Unspecified
+                    ? DateTime.SpecifyKind(v, DateTimeKind.Utc)
+                    : v.ToUniversalTime(),
+                v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
+
         // Relacionamento com Paciente
         builder.HasOne(a => a.Paciente)
             .WithMany(p => p.Agendamentos)
